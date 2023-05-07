@@ -61,3 +61,14 @@
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-weight: 700;
 }
+.text-on-image{
+    position: absolute;
+    color: white;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    bottom: 20px;
+    font-weight: 700;
+    /* font-size: 48px; */
+    line-height: 50px;
+    color: #FFFFFF;
+    -webkit-text-stroke: 2px black; /* width and color */
+}

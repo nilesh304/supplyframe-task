@@ -10,21 +10,22 @@
 </header>
 
 <main>
-  <div class="jumbotron">
-    <h1>This is great</h1>
-    <p>Welcome to templating using EJS</p>
-    <h2>Variable</h2>
-    <p><%= tagline %></p>
-    <ul>
-        <% mascots.forEach(function(mascot) { %>
-          <li>
-            <strong><%= mascot.name %></strong>
-            representing <%= mascot.organization %>,
-            born <%= mascot.birth_year %>
-          </li>
-        <% }); %>
-      </ul>
-  </div>
+    <div class="row">
+        <div style="padding: 0%; position: relative;" class="col-sm">
+            <a href="/characters">
+            <img class="img-fluid" style="height:100%;" src="/images/characters.jpeg">
+            <span class="h1 text-on-image" style="left: 20px;"> CHARACTERS</span>
+        </a>
+        </div>
+
+        <div style="padding: 0%;position: relative;"  class="col-sm">
+            <a href="comics">
+            <img class="img-fluid" style="height:100%;" src="/images/comics.jpeg">
+            <span class="h1 text-on-image" style="right: 20px;"> COMICS</span>
+        </a>
+
+        </div>
+      </div>
 </main>
 
 <footer>
