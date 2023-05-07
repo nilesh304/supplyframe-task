@@ -1,0 +1,63 @@
+.character-card {
+  background: linear-gradient(180deg, #f7e9c4 0%, #f8bd61 100%);
+  border: 5px solid #000000;
+  border-radius: 5px;
+  width: 240px;
+  position: relative;
+  margin-left: 100px;
+}
+
+.character-card-image {
+  margin: 12px 12px 0px ;
+  height: 320px;
+  border: 2px solid #000000;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+}
+.character-card-name{
+    /* background-color: green; */
+    text-align: center;
+    /* border-bottom: 36px solid #fff; */
+    /* height: 0px; */
+	/* border-right: 16px solid transparent; */
+    position: absolute;
+    top:55%;
+    left:5px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: 700;
+    background-image: url(../images/card-char-name-bg.svg);
+    background-repeat: no-repeat;
+    min-width: 120px;
+}
+
+.character-card-details{
+    background-color: #fff;
+    border: 2px solid #000;
+    position: absolute;
+    bottom: 5%;
+    left:5px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: 700;
+    padding: 5px 10px 5px 5px;
+    /* line-height: 11px; */
+    /* height:100px; */
+}
+
+.character-card-name-0{
+
+    background-color: #fff;
+    border: #000 solid 2px;
+    width: fit-content;
+    padding: 5px 10px 5px 5px;
+    position: absolute;
+    bottom: 25%;
+    left:5px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: 700;
+}
