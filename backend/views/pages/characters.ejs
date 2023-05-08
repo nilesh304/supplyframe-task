@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('../partials/head'); %>
+    <%- include('../partials/head',{title:"characters"}); %>
       </head>
       <body class="container">
       
@@ -14,7 +14,7 @@
             <%- include('../partials/character_card.ejs',{name:element.name,image_url:element.image.small_url,origin:element.origin,publisher:element.publisher}); %>         
         <% }) %>
     </div>
-   <script type="text/javascript" src="/js/characters.js"></script>
+   <%- include('../partials/pagination_nav',{current:page}); %>
 </body>
 
 </html>
