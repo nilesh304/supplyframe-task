@@ -1,1 +1,20 @@
-I am characters
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+      </head>
+      <body class="container">
+      
+      <header>
+        <%- include('../partials/header'); %>
+      </header>
+<body>
+    <div class="row">
+        <% data.forEach(element => { %>
+            <%- include('../partials/character_card.ejs',{name:element.name,image_url:element.image.small_url,origin:element.origin,publisher:element.publisher}); %>         
+        <% }) %>
+    </div>
+   <script type="text/javascript" src="/js/characters.js"></script>
+</body>
+
+</html>

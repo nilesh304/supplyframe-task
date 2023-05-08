@@ -15,11 +15,11 @@
   <!-- </div> -->
     
     <div  class="character-card-name-0" >
-        NAME UNKNOWN
+        <%= name %>
     </div>
     
   <div class="character-card-details">
-      Origin: HUMAN <br/>
-        Comic: DC
+      Origin: <%=  origin != null ? origin.name : "Unkown" %> <br/>
+        Comic: <%=  publisher != null ? publisher.name : "Unkown" %>
   </div>
 </div>
