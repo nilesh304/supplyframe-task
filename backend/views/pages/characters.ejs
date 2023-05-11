@@ -10,16 +10,18 @@
       </header>
 <body>
     <form id="search-form" autocomplete="off">
-    <div class="form-group" >
-    <div class="input-group mb-3">
+    <div class="form-group " >
+        <div class="col-lg-6 col-lg-offset-6 m-auto">
+    <div class="input-group mb-3" >
         <input id="input-char-name" type="text" class="form-control" placeholder="Character Name" aria-label="Character Name" aria-describedby="basic-addon2" value=<%=name %>>
         <div class="input-group-append">
           <button id="char-search" class="btn btn-outline-primary" type="submit">Search</button>
         </div>
       </div>
     </div>
+    </div>
 </form>
-    <div class="row" id="characters-container">
+    <div class="row justify-content-center" id="characters-container">
         <% data.forEach(element => { %>
             <%- include('../partials/character_card.ejs',{name:element.name,image_url:element.image.small_url,origin:element.origin,publisher:element.publisher}); %>         
         <% }) %>
