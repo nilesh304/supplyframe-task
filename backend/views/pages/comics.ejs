@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <%- include('../partials/head',{title:"characters"}); %>
+    <%- include('../partials/head',{title:"comics"}); %>
       </head>
       <body class="container">
       
@@ -19,29 +19,12 @@
 
 <script>
     console.log("end");
-    // window.onscroll = function(ev) {
-    // if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
-    //     console.log(
-    //         "we are end"
-    //     );
-    //     var characters_container = document.getElementById("characters-container");
-    //     var k = document.createElement("div");
-    //     k.innerText="heelo"
-    //     characters_container.appendChild(k);
+    
+    // var search_form = document.getElementById("search-form");
+ 
+    // search_form.onsubmit =  (event) =>{
+    //     event.preventDefault();
+    //     location.href = "/characters?name=" +document.getElementById("input-char-name").value ;
     // }
-// };\
-    var search_form = document.getElementById("search-form");
-    // var characters_container = document.getElementById("characters-container");
-    // search_form.onclick = function (params) {
-    //     var name = document.getElementById("input-char-name");
-    //     console.log("clicked",name.value);
-    //     characters_container.innerHTML = "";
-        
-    // }
-    search_form.onsubmit =  (event) =>{
-        // params.pre
-        event.preventDefault();
-        location.href = "/characters?name=" +document.getElementById("input-char-name").value ;
-    }
 </script>
 </html>
