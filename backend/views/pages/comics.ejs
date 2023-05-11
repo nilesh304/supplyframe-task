@@ -1,1 +1,47 @@
-I am comics
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <%- include('../partials/head',{title:"characters"}); %>
+      </head>
+      <body class="container">
+      
+      <header>
+        <%- include('../partials/header'); %>
+      </header>
+<body>    
+    <div class="row" id="characters-container">
+        <% data.forEach(element => { %>
+            <%- include('../partials/comic_card.ejs',{image_url:element.image.small_url}); %>         
+        <% }) %>
+    </div>
+   <%- include('../partials/pagination_nav',{current:page,name:name,page_name:"comics"}); %>
+</body>
+
+<script>
+    console.log("end");
+    // window.onscroll = function(ev) {
+    // if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
+    //     console.log(
+    //         "we are end"
+    //     );
+    //     var characters_container = document.getElementById("characters-container");
+    //     var k = document.createElement("div");
+    //     k.innerText="heelo"
+    //     characters_container.appendChild(k);
+    // }
+// };\
+    var search_form = document.getElementById("search-form");
+    // var characters_container = document.getElementById("characters-container");
+    // search_form.onclick = function (params) {
+    //     var name = document.getElementById("input-char-name");
+    //     console.log("clicked",name.value);
+    //     characters_container.innerHTML = "";
+        
+    // }
+    search_form.onsubmit =  (event) =>{
+        // params.pre
+        event.preventDefault();
+        location.href = "/characters?name=" +document.getElementById("input-char-name").value ;
+    }
+</script>
+</html>

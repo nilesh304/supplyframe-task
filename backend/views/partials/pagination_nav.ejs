@@ -1,19 +1,29 @@
+<% name_val=""%>
+
+<% if(name!="") {%>
+<% name_val="&name="+name %>
+<% console.log(name_val); %>
+
+<% } %>
+
 <nav aria-label="...">
     <ul class="pagination justify-content-center">
       <li class="page-item <%= current ==1 ? "disabled" :"" %>">
-        <a class="page-link" href="/characters?page=<%= current-1 %>" tabindex="-1">Previous</a>
+        <a class="page-link" href="/<%=page_name%>?page=<%= current-1 %><%= name_val %>" tabindex="-1">Previous</a>
       </li>
       <% if (page > 1) { %>
-        <li class="page-item"><a class="page-link" href="/characters?page=<%= current-1 %>"><%=current-1%> </a></li>
+        <li class="page-item"><a class="page-link" href="/<%=page_name%>?page=<%= current-1 %><%= name_val %>"><%=current-1%> </a></li>
 
         <%}%>
 
       <li class="page-item active">
         <a class="page-link" href="#"><%=current%> <span class="sr-only">(current)</span></a>
       </li>
-      <li class="page-item"><a class="page-link" href="/characters?page=<%= current+1 %>"><%=current+1%> </a></li>
+      <li class="page-item"><a class="page-link" href="/<%=page_name%>?page=<%= current+1 %><%= name_val %>"><%=current+1%> </a></li>
+      <li class="page-item"><a class="page-link" href="/<%=page_name%>?page=<%= current+2 %><%= name_val %>"><%=current+2%> </a></li>
+      <li class="page-item"><a class="page-link" href="/<%=page_name%>?page=<%= current+3 %><%= name_val %>"><%=current+3%> </a></li>
       <li class="page-item">
-        <a class="page-link" href="/characters?page=<%= current+1 %>" >Next</a>
+        <a class="page-link" href="/<%=page_name%>?page=<%= current+1 %><%= name_val %>" >Next</a>
       </li>
     </ul>
   </nav>
