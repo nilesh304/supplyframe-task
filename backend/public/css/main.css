@@ -5,11 +5,10 @@
   width: 240px;
   position: relative;
   /* margin: 50px; */
-
 }
 
 .character-card-image {
-  margin: 12px 12px 0px ;
+  margin: 12px 12px 0px;
   height: 320px;
   border: 2px solid #000000;
 }
@@ -21,89 +20,86 @@
   border-radius: 50%;
   display: inline-block;
 }
-.character-card-name{
-    /* background-color: green; */
-    text-align: center;
-    /* border-bottom: 36px solid #fff; */
-    /* height: 0px; */
-	/* border-right: 16px solid transparent; */
-    position: absolute;
-    top:55%;
-    left:5px;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-weight: 700;
-    background-image: url(../images/card-char-name-bg.svg);
-    background-repeat: no-repeat;
-    min-width: 120px;
+.character-card-name {
+  /* background-color: green; */
+  text-align: center;
+  /* border-bottom: 36px solid #fff; */
+  /* height: 0px; */
+  /* border-right: 16px solid transparent; */
+  position: absolute;
+  top: 55%;
+  left: 5px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: 700;
+  background-image: url(../images/card-char-name-bg.svg);
+  background-repeat: no-repeat;
+  min-width: 120px;
 }
 
-.character-card-details{
-    background-color: #fff;
-    border: 2px solid #000;
-    /* position: absolute; */
-    bottom: 5%;
-    left:5px;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-weight: 700;
-    padding: 5px 10px 5px 5px;
-    /* line-height: 11px; */
-    /* height:100px; */
-    width: fit-content;
-    max-width: 172px;
-
+.character-card-details {
+  background-color: #fff;
+  border: 2px solid #000;
+  /* position: absolute; */
+  bottom: 5%;
+  left: 5px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: 700;
+  padding: 5px 10px 5px 5px;
+  /* line-height: 11px; */
+  /* height:100px; */
+  width: fit-content;
+  max-width: 172px;
 }
 
-.character-card-name-0{
-
-    background-color: #fff;
-    border: #000 solid 2px;
-    width: fit-content;
-    padding: 5px 10px 5px 5px;
-    /* position: absolute; */
-    /* bottom: 25%; */
-    /* left:5px; */
-    margin-bottom: 10px;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-weight: 700;
+.character-card-name-0 {
+  background-color: #fff;
+  border: #000 solid 2px;
+  width: fit-content;
+  padding: 5px 10px 5px 5px;
+  /* position: absolute; */
+  /* bottom: 25%; */
+  /* left:5px; */
+  margin-bottom: 10px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: 700;
 }
-.text-on-image{
-    position: absolute;
-    color: white;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    bottom: 20px;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 50px;
-    color: #FFFFFF;
-    -webkit-text-stroke: 2px black; /* width and color */
+.text-on-image {
+  position: absolute;
+  color: white;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  bottom: 20px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 50px;
+  color: #ffffff;
+  -webkit-text-stroke: 2px black; /* width and color */
 }
 
-.character-card-info{
-
-  width: fit-content;  
+.character-card-info {
+  width: fit-content;
   position: absolute;
   bottom: 3.5%;
-  left:5px;
+  left: 5px;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-weight: 700;
 }
 
 .comic-card-image {
-  margin: 1px ;
+  margin: 1px;
   height: 320px;
   border: 2px solid #000000;
 }
 
-.text-on-back-card{
+.text-on-back-card {
   color: white;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-weight: 700;
   font-size: 24px;
   line-height: 50px;
-  color: #FFFFFF;
+  color: #ffffff;
   -webkit-text-stroke: 2px black; /* width and color */
 }
-.body-with-image{
+.body-with-image {
   /* background-image: url("https://tg-cdn.azureedge.net/sites/default/files/images/paragraph/italrb/easy_guide_grass.jpg"); */
 
   /* Add the blur effect */
@@ -122,16 +118,31 @@
   background-attachment: fixed;
 }
 
-.char-details{
+.char-details {
   background-color: white;
   color: #000;
   border: #000 5px solid;
   margin: 30px;
   padding: 40px;
 }
-.char-cell{
-  border: 3px solid black; 
-  width: fit-content; 
+.char-cell {
+  border: 3px solid black;
+  width: fit-content;
   padding: 20px 40px;
   margin: 5px;
+}
+
+.glass-container {
+  background: #ffffff36;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+
+.heart-img{
+  display: block;
+  width: 40px;
+  margin: auto;
 }

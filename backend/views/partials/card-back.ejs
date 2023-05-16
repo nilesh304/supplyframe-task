@@ -1,7 +1,9 @@
 <% var split = api.split('/'); var char_id= split[(split).length-2]; %>
 <div class="card character-card" style="height: 100%;">
     <div style="width: fit-content;margin: auto;" class="text-on-back-card">
+        <%- include("favorite.ejs",{is_favorite:true,num:num}) %>
         <div>Add to Favorites</div>
+        
         <a class="text-on-back-card" style="color: inherit;" href="./character?id=<%=char_id%>">View More</a>
     </div>
   </div>

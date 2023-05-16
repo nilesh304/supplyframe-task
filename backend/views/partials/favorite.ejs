@@ -1,0 +1,33 @@
+
+<div id="img-container-<%=num%>">
+
+</div>
+<script>
+    var img_container_<%=num%> = document.getElementById("img-container-<%=num%>");
+    var img_<%=num%> = document.createElement("img");
+    img_<%=num%>.className="heart-img";
+    img_<%=num%>.id = "heart-<%=num%>"
+    if(<%=is_favorite%>){
+        img_<%=num%>.src="./images/heart_filled.png";
+    }else{
+        img_<%=num%>.src="./images/heart_empty.png";
+    }
+    // console.log(is_favorite);
+    // var is_favorite = document.getElementsByClassName("heart-img");
+    img_container_<%=num%>.appendChild(img_<%=num%>);
+    var is_favorite_<%=num%> =<%=is_favorite%>
+    img_container_<%=num%>.onclick=function()   {
+        if (is_favorite_<%=num%>) {
+            img_<%=num%>.src="./images/heart_empty.png";
+        }else{
+            img_<%=num%>.src="./images/heart_filled.png";
+        }
+        is_favorite_<%=num%>=!is_favorite_<%=num%>;
+    img_container_<%=num%>.innerHTML="";
+    img_container_<%=num%>.appendChild(img_<%=num%>);
+    
+    console.log(img_<%=num%>,is_favorite_<%=num%>,img_container_<%=num%>);
+
+    }
+
+</script>
