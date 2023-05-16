@@ -3,20 +3,8 @@
     <head>
         <%- include('../partials/head'); %>
       </head>
-<body>
-    <%- include("../partials/flip_card.ejs") %>
+<body class="body-with-image" style="background-image: url(https://tg-cdn.azureedge.net/sites/default/files/images/paragraph/italrb/easy_guide_grass.jpg);">
+   
 
-    <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <%- include("../partials/character_card.ejs",{name:"name",origin:"",publisher:""}) %>
-          </div>
-          <div class="flip-card-back">
-            <h1>John Doe</h1> 
-            <p>Architect & Engineer</p> 
-            <p>We love that guy</p>
-          </div>
-        </div>
-      </div>
 </body>
 </html>

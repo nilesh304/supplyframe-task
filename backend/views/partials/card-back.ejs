@@ -1,6 +1,8 @@
+<% var split = api.split('/'); var char_id= split[(split).length-2]; %>
 <div class="card character-card" style="height: 100%;">
     <div style="width: fit-content;margin: auto;" class="text-on-back-card">
-        View More
+        <div>Add to Favorites</div>
+        <a href="./character?id=<%=char_id%>">View More</a>
     </div>
   </div>
   

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    
+    <body class="container-fluid body-with-image" style="background-image: url('<%= data.image.screen_large_url%>');">
+        <div class="row justify-content-start" style="height: 100vh;">
+            <div class="col-sm">
+                <img class="img-fluid mx-auto d-block" src="<%=data.image.medium_url%>" style="width: 70%;height: 70%;">
+            </div>
+            <div class="col-sm char-details">
+                <h1 ><%=data.name  %></h1>
+                <br/>
+                <h3><%=data.deck  %></h3>
+                <br/>
+
+                <div class="row" >
+                    <div class="col-sm-6" >
+                        <div class="char-cell">
+                            Gender : 
+                            <% if (data.gender==1){ %>
+                                Male
+                            <% }else if (data.gender==2){ %>
+                                Female
+                            <%} else{%>
+                                Other
+                            <% }%>
+                        </div>
+                    </div> 
+
+                    <div class="col-sm-6">
+                        <div class="char-cell">
+                            Birth Date : 
+                            <% if(data.birth!=null){ %>
+                            <%= data.birth%>  
+                            <% } else{ %>
+                            Unknown
+                            <% } %>
+                        </div>
+                    </div> 
+                  
+                    <div class="col-sm-6">
+                        <h4>Powers</h4> <br/>
+                        <ul>
+                            <% data.powers.slice(0,10).forEach(element => { %>
+                                <li> <%=element.name %></li>
+                            <% }) %>
+                        </ul>
+                    </div> 
+                  
+                    <div class="col-sm-6">
+                        <h4>Movies</h4><br/>
+                        <ul>
+                            <% data.movies.slice(0,10).forEach(element => { %>
+                                <li> <%=element.name %></li>
+                            <% }) %>
+                        </ul>        
+                    </div> 
+                </div>
+            </div>    
+        </div>
+
+    </body>
+</html>

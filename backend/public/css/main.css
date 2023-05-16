@@ -103,3 +103,33 @@
   color: #FFFFFF;
   -webkit-text-stroke: 2px black; /* width and color */
 }
+.body-with-image{
+  /* background-image: url("https://tg-cdn.azureedge.net/sites/default/files/images/paragraph/italrb/easy_guide_grass.jpg"); */
+
+  /* Add the blur effect */
+  /* filter: blur(8px); */
+  /* -webkit-filter: blur(8px); */
+  backdrop-filter: blur(40px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+
+.char-details{
+  background-color: white;
+  color: #000;
+  border: #000 5px solid;
+  margin: 30px;
+  padding: 40px;
+}
+.char-cell{
+  border: 3px solid black; 
+  width: fit-content; 
+  padding: 20px 40px;
+}
