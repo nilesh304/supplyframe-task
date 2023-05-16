@@ -119,6 +119,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 20px;
+  background-attachment: fixed;
 }
 
 .char-details{
@@ -132,4 +133,5 @@
   border: 3px solid black; 
   width: fit-content; 
   padding: 20px 40px;
+  margin: 5px;
 }

@@ -5,9 +5,9 @@
     </head>
     
     <body class="container-fluid body-with-image" style="background-image: url('<%= data.image.screen_large_url%>');">
-        <div class="row justify-content-start" style="height: 100vh;">
-            <div class="col-sm">
-                <img class="img-fluid mx-auto d-block" src="<%=data.image.medium_url%>" style="width: 70%;height: 70%;">
+        <div class="row justify-content-start" style="min-height: 100vh;">
+            <div class="col-sm my-auto">
+                <img class="img-fluid mx-auto  d-block " style="margin: 30px;" src="<%=data.image.medium_url%>">
             </div>
             <div class="col-sm char-details">
                 <h1 ><%=data.name  %></h1>
@@ -41,21 +41,25 @@
                     </div> 
                   
                     <div class="col-sm-6">
-                        <h4>Powers</h4> <br/>
-                        <ul>
-                            <% data.powers.slice(0,10).forEach(element => { %>
-                                <li> <%=element.name %></li>
-                            <% }) %>
-                        </ul>
+                        <div class="char-cell">
+                            <h4>Powers</h4> <br/>
+                            <ul>
+                                <% data.powers.slice(0,10).forEach(element => { %>
+                                    <li> <%=element.name %></li>
+                                <% }) %>
+                            </ul>
+                        </div>
                     </div> 
                   
                     <div class="col-sm-6">
-                        <h4>Movies</h4><br/>
-                        <ul>
-                            <% data.movies.slice(0,10).forEach(element => { %>
-                                <li> <%=element.name %></li>
-                            <% }) %>
-                        </ul>        
+                        <div class="char-cell">
+                            <h4>Movies</h4><br/>
+                            <ul>
+                                <% data.movies.slice(0,10).forEach(element => { %>
+                                    <li> <%=element.name %></li>
+                                <% }) %>
+                            </ul>    
+                        </div>    
                     </div> 
                 </div>
             </div>    
