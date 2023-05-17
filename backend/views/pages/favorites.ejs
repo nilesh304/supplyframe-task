@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <%- include('../partials/head',{title:"characters"}); %>
+      </head>
+      <body class="container">
+      
+      <header>
+        <%- include('../partials/header'); %>
+      </header>
+<body>
+    
+    <div class="row justify-content-center" id="characters-container">
+        <% data.forEach((element,index) => { %>
+            <%- include('../partials/flip_card.ejs',{name:element.name,image_url:element.image.small_url,origin:element.origin,publisher:element.publisher,api:element.api_detail_url,num:index,id:element.id}); %>         
+        <% }) %>
+    </div>
+   
+</body>
+
+
+</html>

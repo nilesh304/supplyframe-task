@@ -93,4 +93,62 @@ router.get("/character", async function (req, res) {
   res.render("pages/character",{data:character_api.data.results});
 }); 
 
+
+router.get("/get-characters", async function (req, res) {
+
+    var ids = req.query.id;
+  
+    const query_params = {
+      api_key: process.env.COMIC_VINE_API_KEY,
+      field_list: "name,image,id,origin,publisher,api_detail_url",
+      format:"json",
+  }
+  
+    if(Array.isArray(ids)){
+      query_params["filter"]="id:"+ids.join("|");
+    }else{
+      query_params["filter"]="id:"+ids
+  
+    }
+    console.log(query_params);
+    // console.log(ids,ids.join("|"));
+    
+    
+    // // console.log("name:"+name);
+    const characters_api = await axios.get(process.env.GET_CHARACTERS_API,{params:query_params})
+    console.log(characters_api.data);
+    res.send(JSON.stringify(characters_api.data))
+  // res.render("pages/favorites",{data:characters_api.data.results});
+  // res.sendFile(path.join(__dirname, "../public/favorites.html"));
+  });
+
+router.get("/favorites", async function (req, res) {
+
+//   var ids = req.query.id;
+
+//   const query_params = {
+//     api_key: process.env.COMIC_VINE_API_KEY,
+//     field_list: "name,image,id,origin,publisher,api_detail_url",
+//     limit:12,
+//     format:"json",
+// }
+
+//   if(Array.isArray(ids)){
+//     query_params["filter"]="id:"+ids.join("|");
+//   }else{
+//     query_params["filter"]="id:"+ids
+
+//   }
+//   console.log(query_params);
+//   // console.log(ids,ids.join("|"));
+  
+  
+//   // // console.log("name:"+name);
+//   const characters_api = await axios.get(process.env.GET_CHARACTERS_API,{params:query_params})
+  // // console.log(characters_api.data.results);
+
+// res.render("pages/favorites",{data:characters_api.data.results});
+res.sendFile(path.join(__dirname, "../public/favorites.html"));
+});
+
 module.exports = router;
