@@ -18,6 +18,7 @@ const getFavoriteCharacters = async () => {
     var character_card_img_holder = document.createElement("div");
     character_card_img_holder.className = "character-card-image";
 
+    // main image of character card
     var image = document.createElement("img");
     image.src = element.image.small_url;
     image.className = "card-img-top";
@@ -27,6 +28,7 @@ const getFavoriteCharacters = async () => {
 
     character_card.appendChild(character_card_img_holder);
 
+    // bottom-right 3 dots
     var dot_holder = document.createElement("div");
     dot_holder.style = "display: inline; align-self: end; margin-right: 8px;";
     var sp = document.createElement("span");
@@ -39,11 +41,15 @@ const getFavoriteCharacters = async () => {
 
     character_card.appendChild(dot_holder);
 
+    // Flip Card
+
     var flip_card = document.createElement("div");
     flip_card.className = "flip-card";
 
     var flip_card_inner = document.createElement("div");
     flip_card_inner.className = "flip-card-inner";
+
+    // Flip Card Front Side
 
     var flip_card_front = document.createElement("div");
     flip_card_front.className = "flip-card-front";
@@ -54,6 +60,8 @@ const getFavoriteCharacters = async () => {
     flip_card_front.appendChild(character_card);
     flip_card_inner.appendChild(flip_card_front);
 
+    // Flip Card Back Side
+
     var back_side = document.createElement("div");
     back_side.className = "card character-card";
     back_side.style.height = "100%";
@@ -61,6 +69,8 @@ const getFavoriteCharacters = async () => {
     var text_on_back_card = document.createElement("div");
     text_on_back_card.className = "text-on-back-card";
     text_on_back_card.style = "width: fit-content;margin: auto;";
+
+    // Heart icon
 
     var heart_img = document.createElement("img");
     heart_img.src = "/images/heart_filled.png";
@@ -73,10 +83,11 @@ const getFavoriteCharacters = async () => {
 
     text_on_back_card.append(heart_img);
 
+    //View More anchor tag
     var view_more = document.createElement("a");
     view_more.href = "/character?id=4005-" + element.id;
     view_more.innerHTML = "View More";
-    view_more.style = "-webkit-text-stroke: 2px black;color:inherit";
+    view_more.style = "-webkit-text-stroke: 1px black;color:inherit";
 
     text_on_back_card.append(view_more);
 
@@ -99,12 +110,17 @@ const getFavoriteCharacters = async () => {
     character_card_details.className = "character-card-details";
     var br = document.createElement("br");
 
-    character_card_details.innerHTML =
-      "Origin: " +
-      element.origin.name +
-      " <br /> Comic: " +
-      element.publisher.name;
-    // character_card_details.append(br)
+    character_card_details.innerHTML =""
+    if(element.origin){
+        character_card_details.innerHTML =
+        "Origin: " +
+        element.origin.name
+    }
+    if(element.publisher){
+        character_card_details.innerHTML +=" <br /> Comic: " +
+        element.publisher.name;
+    }
+    
 
     character_card_name.innerHTML = element.name;
     character_card_info.appendChild(character_card_name);
