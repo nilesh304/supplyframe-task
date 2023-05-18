@@ -4,12 +4,12 @@
 </div>
 <script>
     
-            var is_favorite_<%=num%> =localStorage.getItem(<%=id%>)
-
+    var is_favorite_<%=num%> =localStorage.getItem(<%=id%>)
     var img_container_<%=num%> = document.getElementById("img-container-<%=num%>");
     var img_<%=num%> = document.createElement("img");
     img_<%=num%>.className="heart-img";
     img_<%=num%>.id = "heart-<%=num%>"
+    
     if(is_favorite_<%=num%>){
         img_<%=num%>.src="./images/heart_filled.png";
     }else{
