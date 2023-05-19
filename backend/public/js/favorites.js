@@ -1,10 +1,14 @@
 var favorites = Object.keys(localStorage);
 
+
+
 function removeFromFavorite(id) {
   localStorage.removeItem(id);
 }
 
 const getFavoriteCharacters = async () => {
+
+
   const response = await fetch("/get-characters?id=" + favorites.join("&id="));
   const myJson = await response.json(); //extract JSON from the http response
   var container = document.getElementById("characters-container");
@@ -131,4 +135,15 @@ const getFavoriteCharacters = async () => {
     container.appendChild(flip_card);
   });
 };
-getFavoriteCharacters();
+
+if(favorites.length>0){
+  getFavoriteCharacters();
+}else{
+  var loader = document.getElementById("loader");
+  loader.style.display = "none";
+  var container = document.getElementById("container");
+  var not_found = document.createElement("p")
+  not_found.className="text-center mt-5"
+  not_found.innerHTML = "You Haven't Added any Favorites Yet ! <br/> <br/> Click on the heart to add a character to your favorites"
+  container.appendChild(not_found);
+}
