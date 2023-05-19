@@ -116,7 +116,7 @@
   /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 20px;
+  padding: 0px;
   background-attachment: fixed;
 }
 
@@ -136,7 +136,7 @@
 
 .glass-container {
   background: #ffffff36;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 
-const  { index, about,characters,comics,character,get_characters,get_favorites,not_found_page } = require('./default.js');
+const  { index, about,characters,comics,character,get_characters,get_favorites,not_found_page,get_comic } = require('./default.js');
 
 // index page
 router.get("/", index);
@@ -23,6 +23,9 @@ router.get("/test-2", function (req, res) {
 router.get("/characters",characters);
 
 router.get("/comics", comics);
+
+router.get("/comic", get_comic);
+
 
 
 router.get("/character", character);

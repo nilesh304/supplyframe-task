@@ -1,5 +1,7 @@
 <div class="card character-card">
     <div class="comic-card-image">
-        <img  class="card-img-top" style="height: 316px;" src= <%= typeof image_url != 'undefined' ? image_url : "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/portrait_xlarge.jpg" %>>
+        <a href="/comic?id=<%=id%>">
+            <img  class="card-img-top" style="height: 316px;" src= <%= typeof image_url != 'undefined' ? image_url : "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/portrait_xlarge.jpg" %>>
+        </a>
     </div>
   </div>

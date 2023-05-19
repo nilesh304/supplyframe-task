@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    <%- include('../partials/transparent_header'); %>
+    <body class="container-fluid body-with-image" style="background-image: url('<%= data.image.screen_large_url%>');">
+        <div class="row justify-content-start" style="min-height: 100vh;">
+            <div class="col-sm my-auto">
+                <img class="img-fluid mx-auto  d-block " style="margin: 30px;" src="<%=data.image.medium_url%>">
+            </div>
+            <div class="col-sm char-details">
+                <h1 ><%=data.name  %></h1>
+                <br/>
+                <h3><%- data.description %></h3>
+                <br/>
+
+            </div>    
+        </div>
+    </body>
+</html>

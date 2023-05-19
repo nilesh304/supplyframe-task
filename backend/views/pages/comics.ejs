@@ -1,30 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <%- include('../partials/head',{title:"comics"}); %>
-      </head>
+        <%- include('../partials/head',{title:"comics"}); %>
+    </head>
       
-      <header>
+    <header>
         <%- include('../partials/header',{comics:"active",characters:"",home:"",favorites:""}); %>
+    </header>
 
-      </header>
-<body class="container">    
-    <div class="row justify-content-center" id="characters-container">
-        <% data.forEach(element => { %>
-            <%- include('../partials/comic_card.ejs',{image_url:element.image.small_url}); %>         
-        <% }) %>
-    </div>
-   <%- include('../partials/pagination_nav',{current:page,name:name,page_name:"comics"}); %>
-</body>
-
-<script>
-    console.log("end");
-    
-    // var search_form = document.getElementById("search-form");
- 
-    // search_form.onsubmit =  (event) =>{
-    //     event.preventDefault();
-    //     location.href = "/characters?name=" +document.getElementById("input-char-name").value ;
-    // }
-</script>
+    <body class="container">    
+        <div class="row justify-content-center" id="characters-container">
+            <% data.forEach(element => { %>
+                <%- include('../partials/comic_card.ejs',{id:element.id,image_url:element.image.small_url}); %>         
+            <% }) %>
+        </div>
+        <%- include('../partials/pagination_nav',{current:page,name:name,page_name:"comics"}); %>
+    </body>
 </html>
