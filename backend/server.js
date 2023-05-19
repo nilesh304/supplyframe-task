@@ -12,5 +12,5 @@ app.use(express.static(__dirname+"/public"));
 
 app.use("",require("./routes/routes"))
 
-app.listen(8080);
-console.log('Server is listening on port 8080');
+app.listen( process.env.PORT);
+console.log('Server is listening on port '+ process.env.PORT);
