@@ -11,6 +11,9 @@ function about(req, res) {
 
 async function characters(req, res) {
   var page = req.query.page || 1;
+  if (page < 1) {
+    page = 1;
+  }
   var name = req.query.name || "";
   const query_params = {
     api_key: process.env.COMIC_VINE_API_KEY,
@@ -23,8 +26,9 @@ async function characters(req, res) {
   const characters_api = await axios.get(process.env.GET_CHARACTERS_API, {
     params: query_params,
   });
-
+  console.log(Math.ceil(characters_api.data.number_of_total_results/12));
   res.render("pages/characters", {
+    max_page:Math.ceil(characters_api.data.number_of_total_results/12),
     data: characters_api.data.results,
     page: parseInt(page),
     name: name,
@@ -33,6 +37,9 @@ async function characters(req, res) {
 
 async function comics(req, res) {
   var page = req.query.page || 1;
+  if (page < 1) {
+    page = 1;
+  }
   var name = req.query.name || "";
   const query_params = {
     api_key: process.env.COMIC_VINE_API_KEY,
@@ -42,14 +49,15 @@ async function comics(req, res) {
     offset: (page - 1) * 12,
     filter: "name:" + name,
   };
-  const characters_api = await axios.get(process.env.GET_COMICS_API, {
+  const comics_api = await axios.get(process.env.GET_COMICS_API, {
     params: query_params,
   });
-
+console.log(Math.ceil(comics_api.data.number_of_total_results/12));
   res.render("pages/comics", {
-    data: characters_api.data.results,
+    data: comics_api.data.results,
     page: parseInt(page),
     name: name,
+    max_page:Math.ceil(comics_api.data.number_of_total_results/12),
   });
 }
 
@@ -95,29 +103,38 @@ async function get_favorites(req, res) {
   res.sendFile(path.join(__dirname, "../public/favorites.html"));
 }
 
-async function get_comic(req,res) {
+async function get_comic(req, res) {
+  var id = req.query.id || "";
+  console.log(id);
 
-    var id = req.query.id || "";
-    console.log(id);
+  const query_params = {
+    api_key: process.env.COMIC_VINE_API_KEY,
+    field_list: "name,image,id,origin,publisher,api_detail_url,description",
+    format: "json",
+  };
+  const comic_api = await axios.get(process.env.GET_COMIC_API + id, {
+    params: query_params,
+  });
+  console.log(process.env.GET_COMIC_API + id, comic_api.data.results);
 
-    const query_params = {
-      api_key: process.env.COMIC_VINE_API_KEY,
-      field_list: "name,image,id,origin,publisher,api_detail_url,description",
-      format: "json",
-    };
-    const comic_api = await axios.get(process.env.GET_COMIC_API+id, {
-      params: query_params,
-    });
-    console.log(process.env.GET_COMIC_API+id,comic_api.data.results);
+  console.log(comic_api.data.results);
 
-    console.log(comic_api.data.results);
-  
-    res.render("pages/comic", {
-      data: comic_api.data.results,
-    });
+  res.render("pages/comic", {
+    data: comic_api.data.results,
+  });
 }
 
 function not_found_page(req, res) {
   res.render("pages/not_found_page.ejs");
 }
-module.exports = { index, about,characters,comics,character,get_characters,get_favorites,not_found_page,get_comic };
+module.exports = {
+  index,
+  about,
+  characters,
+  comics,
+  character,
+  get_characters,
+  get_favorites,
+  not_found_page,
+  get_comic,
+};

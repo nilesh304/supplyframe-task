@@ -22,11 +22,15 @@
             </div>
         </form>
         <div class="row justify-content-center" id="characters-container">
-            <% data.forEach((element,index) => { %>
-                <%- include('../partials/flip_card.ejs',{name:element.name,image_url:element.image.small_url,origin:element.origin,publisher:element.publisher,api:element.api_detail_url,num:index,id:element.id}); %>         
-            <% }) %>
+            <% if(data.length>0) {%>
+                <% data.forEach((element,index) => { %>
+                    <%- include('../partials/flip_card.ejs',{name:element.name,image_url:element.image.small_url,origin:element.origin,publisher:element.publisher,api:element.api_detail_url,num:index,id:element.id}); %>         
+                <% }) %>
+            <% } else {%>
+                <h1 class=" display-1 text-center">Sorry! <br/> <br/>No Data Found</h1>
+            <% } %>
         </div>
-        <%- include('../partials/pagination_nav',{current:page,name:name,page_name:"characters"}); %>
+        <%- include('../partials/pagination_nav',{current:page,name:name,page_name:"characters",max_page:max_page}); %>
     </body>
 
     <script defer>
