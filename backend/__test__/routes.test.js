@@ -22,39 +22,58 @@ const fs = require("fs");
 const path = require("path");
 const ejs = require("ejs");
 
-const targetFile = path.resolve(__dirname, "../views/pages/index.ejs");
+const homepage = path.resolve(__dirname, "../views/pages/index.ejs");
+const characters_page = path.resolve(__dirname, "../views/pages/characters.ejs");
+const comics_page = path.resolve(__dirname, "../views/pages/index.ejs");
+// const favorite_page = path.resolve(__dirname, "../views/pages/index.ejs");
 
-ejs.renderFile(targetFile, function (err, str) {
+
+ejs.renderFile(homepage, function (err, str) {
   if (str) {
     let dom;
     let container;
 
-    describe("Home page", () => {
-      beforeEach(async () => {
-        dom = await new JSDOM(str, { runScripts: "dangerously" });
+    describe("pages", () => {
+      beforeEach(() => {
+        dom =  new JSDOM(str, { runScripts: "dangerously" });
         // console.log(dom);
-        await new Promise((resolve) =>
-          dom.window.addEventListener("load", resolve)
-        );
         container = dom.window.document.body;
       });
 
-      test("should show 1", () => {
-        // console.log(">>> ",container.querySelectorAll(".img-fluid")[0].src);
-        // console.log(">>> ",container.querySelectorAll(".img-fluid")[1].src);
-
+      test("home-page", () => {
         expect(container.querySelector(".row")).not.toBeNull();
-        // expect(container.querySelector(".row").textContent).toBe('\n        \n            \n            \n             CHARACTERS\n        \n        \n        \n            \n            \n             COMICS\n\n\n\n\n      ');
         expect(container.querySelector(".img-fluid")).not.toBeNull();
         expect(container.querySelectorAll(".img-fluid").length).toBe(2);
-        // console.log(">>> ",container.querySelectorAll(".img-fluid").src);
         expect(container.querySelectorAll(".img-fluid")[0].src).toBe("/images/characters.jpeg");
         expect(container.querySelectorAll(".img-fluid")[1].src).toBe("/images/comics.jpeg");
-
-
-
-        // expect(1).toBe(1);
       });
     });
   }
 });
+// name:element.name,image_url:element.image.small_url,origin:element.origin,publisher:element.publisher,api:element.api_detail_url,num:index,id:element.id
+
+ejs.renderFile(characters_page,{name:"",page:1,data:[{name:"a",image:{small_url:"abc.jpg"},origin:{name:"origin"},publisher:{name:"publisher"},api_detail_url:"as",num:0,id:1}]}, function (err, str) {
+    if (err) {
+        console.log(err)
+       }
+    // console.log(str);
+    if (str) {
+      let dom;
+      let container;
+    //   console.log(str);
+  
+      describe("characters-pages", () => {
+        beforeEach(() => {
+          dom =  new JSDOM(str, { runScripts: "dangerously",url: 'http://localhost/' });
+          container = dom.window.document.body;
+        // console.log(container.querySelectorAll(".flip-card").length);
+
+        });
+        test("characters", () => {
+          expect(container.querySelector(".row")).not.toBeNull();
+          expect(container.querySelector(".flip-card")).not.toBeNull();
+          expect(container.querySelectorAll(".flip-card").length).toBeLessThanOrEqual(12);
+        });
+      });
+    }
+  });

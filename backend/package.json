@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "nodemon server.js"
   },
   "keywords": [],
@@ -23,5 +23,10 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "supertest": "^6.3.3"
+  },
+  "jest":{
+    "testEnvironmentOptions": {
+      "url": "http://localhost/"
+    }
   }
 }
